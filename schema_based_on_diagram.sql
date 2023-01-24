@@ -45,3 +45,11 @@ treatment_id INT,
 CONSTRAINT treatment_id_fk  FOREIGN KEY (treatment_id) REFERENCES treatments(id),
 PRIMARY KEY(id)
 );
+
+CREATE TABLE medical_histories_treatments(
+ medical_history_id INT,
+ treatment_id INT,
+ CONSTRAINT medical_history_id_fk  FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
+ CONSTRAINT treatment_id_fk  FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
+
