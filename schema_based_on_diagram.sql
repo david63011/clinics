@@ -25,3 +25,10 @@ FOREIGN KEY (medical_history_id)
 REFERENCES medical_histories(id),
 	PRIMARY KEY(id)
 );
+
+CREATE TABLE treatments(
+ id INT GENERATED ALWAYS AS IDENTITY,
+ type VARCHAR(250),
+ name VARCHAR (250),
+PRIMARY KEY(id)
+);
