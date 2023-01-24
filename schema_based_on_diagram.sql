@@ -13,3 +13,15 @@ CREATE TABLE medical_histories(
   status VARCHAR(250),
   PRIMARY KEY(id)
 )
+
+CREATE TABLE invoices(
+ id INT GENERATED ALWAYS AS IDENTITY,
+ total_amount decimal ,
+ generated_at timestamp,
+payed_at timestamp,
+medical_history_id INT,
+ CONSTRAINT medical_history_id_fk  
+FOREIGN KEY (medical_history_id)
+REFERENCES medical_histories(id),
+	PRIMARY KEY(id)
+);
